@@ -1,0 +1,21 @@
+mkdir svelte-kit-mobile
+cd svelte-kit-mobile/
+npm init svelte@next
+npm install
+npm install @capacitor/core @capacitor/cli @capacitor/android @capacitor/fylesystem @capacitor/geolocation
+npx cap init
+npm install -D @sveltejs/adapter-static@next
+
+스벨트 config 체인지 
+npx cap add android
+
+github :  sveltekit-capacitor-sample
+npm run build
+
+androidmenifest에 추가
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-feature android:name="android.hardware.location.gps" />
+npx cap sync
+
+npx cap open android
